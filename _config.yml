@@ -1,0 +1,9 @@
+# This sets a blank configuation. See:
+#
+# https://github.com/mojombo/jekyll/wiki/configuration
+#
+# For more details about configuring Jekyll.
+#
+exclude:
+  - README.md
+title: "wordlessweb"
