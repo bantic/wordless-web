@@ -8,7 +8,7 @@
       } else {
         window.__wlw.loading_jQuery= true;
         var jq_script = document.createElement('script');
-        jq_script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js';
+        jq_script.src = '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js';
         document.body.appendChild(jq_script);
         window.__wlw.loader();
       }
