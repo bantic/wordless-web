@@ -18,7 +18,7 @@
   }
   window.__wlw.hideWords = function(jQuery) {
     jQuery('body').find('*').each( function() {
-      $(this).css({'-webkit-transition':'all 1s ease-out',
+      jQuery(this).css({'-webkit-transition':'all 1s ease-out',
                    '-moz-transition':'all 1s ease-out',
                    '-o-transition':'all 1s ease-out',
                    'transition':'all 1s ease-out',
