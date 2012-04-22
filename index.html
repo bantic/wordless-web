@@ -4,16 +4,17 @@ layout: default
 ---
 
 <div id='main'>
-  <div id='header'>
+  <div id='header' class='inactive'>
     <h1>WORD LESS WEB</h1>
   </div>
-  <div id='button-section'>
-    <div class='button-wrapper'>
-      <img src='/images/WLW_button.png' />
+  <div id='button-section' class='inactive'>
+    <div id='button-wrapper'>
+      <a id='bookmarklet' href='#' title='Click me'>
+        <img src='/images/WLW_button.png' />
+      </a>
     </div>
-    <a href="javascript: (function () { var jsCode = document.createElement('script');jsCode.setAttribute('src', '//wordlessweb.spintoapp.com/wlw.js'); document.body.appendChild(jsCode); }());">BOOKMARKLET</a>
   </div>
-  <div id='instructions'>
+  <div id='instructions' class='inactive'>
     <ol>
       <li>
        1. Click and drag above button to your browser’s bookmarks bar.
@@ -28,6 +29,21 @@ layout: default
        4. Enjoy.
        </li>
      </ol>
+  </div>
+  <div id='about' class='hidden'>
+    <p><strong>Word Less Web</strong> is an experiment that allows us to look at web sites in a completely different way. A simple browser plug-in serves as a filter that
+    make the text on any site invisible by turning the text and background colors 
+    into white. Only thing you see are the pictures against a blank background.
+    </p>
+    <p>
+    Removing the text also means removing the context for the pictures. Now you can see the pictures purely for what they are without names, labels, 
+    definitions, and purposes. It completely changes the way we perceive images
+    on sites like Facebook, Youtube, Twitter, and Huffington Post. Our interaction with friends, culture, social connections and news instantly becomes more 
+    mysterious and open-ended for each person’s imagination.
+    </p>
+    <p>
+    The whole web also seems a little calmer and quieter when words disappear.
+    </p>
   </div>
 </div>
 <!--

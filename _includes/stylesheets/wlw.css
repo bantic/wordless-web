@@ -8,21 +8,60 @@ body {
 #main {
   width: 100%;
 }
-#main #header h1 {
-  font-size: 44px;
+
+.inactive {
+  color: #FFFFFF;
 }
-.button-wrapper {
-  width: 100px;
+.hidden {
+  display: none;
+}
+
+#header h1 {
+  font-size: 44px;
+  height: 180px;
+  line-height: 180px;
+  color: #939598;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#header.inactive h1 {
+  color: #FFFFFF;
+}
+#button-wrapper {
+  width: 127px;
   margin: 0 auto;
+  height: 180px;
+  line-height: 225px;
 }
 #instructions {
   font-size: 18px;
+  color: #939598;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#instructions.inactive {
+  color: #FFFFFF;
 }
 #instructions ol {
   list-style: none;
 }
-
 #button-section {
   border-top: 1px solid #BCBEC0;
   border-bottom: 1px solid #BCBEC0;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#button-section.inactive {
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+}
+#about {
+  width: 50%;
+  margin: 0 auto;
 }
