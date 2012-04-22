@@ -17,15 +17,19 @@
     }
   }
   window.__wlw.hideWords = function(jQuery) {
-    jQuery('body').find('*').each( function() {
-      jQuery(this).css({'-webkit-transition':'all 1s ease-out',
-                   '-moz-transition':'all 1s ease-out',
-                   '-o-transition':'all 1s ease-out',
-                   'transition':'all 1s ease-out',
-                   'color':'#FFF',
-                   'background-color':'#FFF',
-                   'border-color':'#FFF'});
+    var css_changes = {
+      '-webkit-transition':'all 1s ease-out',
+      '-moz-transition':'all 1s ease-out',
+      '-o-transition':'all 1s ease-out',
+      'transition':'all 1s ease-out',
+      'color':'#FFF',
+      'background-color':'#FFF',
+      'border-color':'#FFF'
+    };
+    jQuery('body').css(css_changes).find('*').each( function() {
+      jQuery(this).css(css_changes);
     });
   }
   window.__wlw.loader();
 })();
+
