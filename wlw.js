@@ -116,9 +116,11 @@
     jQuery(document).bind('DOMNodeInserted', function(event) {
       console.log('dom node inserted: ' + event.target.nodeName + ' in ' +
                   event.relatedNode.nodeName);
-      jQuery(event.relatedNode).whiten(true).find('*').each ( function() {
-        jQuery(this).whiten(true);
-      });
+      if (!window.__wlw.queued_update) {
+        console.log("Queuing update");
+        window.__wlw.queued_update = true;
+        window.setTimeout( window.__wlw.hideWords, 250);
+      }
     });
   };
 
@@ -126,6 +128,7 @@
     jQuery('body').whiten().find('*').each( function() {
       jQuery(this).whiten();
     });
+    window.__wlw.queued_update = false;
   }
   window.__wlw.loader();
 })();
