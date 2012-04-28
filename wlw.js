@@ -119,7 +119,7 @@
         window.__wlw.queued_update = true;
         var my_jquery = jQuery;
         var doUpdate = function() {
-          window.__wlw.hideWord(my_jquery);
+          window.__wlw.hideWords(my_jquery);
         };
         window.setTimeout( doUpdate, 250 );
       }
