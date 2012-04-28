@@ -83,7 +83,7 @@
   }
 
   window.__wlw.addWhitenToJquery = function(jQuery) {
-    jQuery.fn.whiten = function() {
+    jQuery.fn.whiten = function(fast) {
       var css_changes = {
         '-webkit-transition':'all 1s ease-out',
         '-moz-transition':'all 1s ease-out',
@@ -96,7 +96,9 @@
         'border-color':'#FFF',
         'text-shadow':'none'
       };
-      this.css(css_changes);
+      if (!fast) {
+        this.css(css_changes);
+      }
       for (var style_change in style_changes) {
         if (style_changes.hasOwnProperty(style_change)) {
           this.style(style_change, style_changes[style_change], 'important');
@@ -112,8 +114,10 @@
 
   window.__wlw.live = function(jQuery) {
     jQuery(document).bind('DOMNodeInserted', function(event) {
-      jQuery(event.relatedNode).whiten().find('*').each ( function() {
-        jQuery(this).whiten();
+      console.log('dom node inserted: ' + event.target.nodeName + ' in ' +
+                  event.relatedNode.nodeName);
+      jQuery(event.relatedNode).whiten(true).find('*').each ( function() {
+        jQuery(this).whiten(true);
       });
     });
   };
