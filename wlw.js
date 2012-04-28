@@ -13,21 +13,101 @@
         window.__wlw.loader();
       }
     } else {
+      window.__wlw.fixCSSStyleDeclaration();
+      jQuery = window.__wlw.addWhitenToJquery(jQuery);
+      jQuery = window.__wlw.addStyleToJquery(jQuery);
       window.__wlw.hideWords(jQuery);
     }
   }
+
+  window.__wlw.fixCSSStyleDeclaration = function() {
+    // see http://stackoverflow.com/questions/2655925/jquery-css-applying-important-styles
+    // For those who need them (< IE 9), add support for CSS functions
+    var isStyleFuncSupported = CSSStyleDeclaration.prototype.getPropertyValue != null;
+    if (!isStyleFuncSupported) {
+        CSSStyleDeclaration.prototype.getPropertyValue = function(a) {
+            return this.getAttribute(a);
+        };
+        CSSStyleDeclaration.prototype.setProperty = function(styleName, value, priority) {
+            this.setAttribute(styleName,value);
+            var priority = typeof priority != 'undefined' ? priority : '';
+            if (priority != '') {
+                // Add priority manually
+                var rule = new RegExp(RegExp.escape(styleName) + '\\s*:\\s*' + RegExp.escape(value) + '(\\s*;)?', 'gmi');
+                this.cssText = this.cssText.replace(rule, styleName + ': ' + value + ' !' + priority + ';');
+            } 
+        }
+        CSSStyleDeclaration.prototype.removeProperty = function(a) {
+            return this.removeAttribute(a);
+        }
+        CSSStyleDeclaration.prototype.getPropertyPriority = function(styleName) {
+            var rule = new RegExp(window.__wlw.escape(styleName) + '\\s*:\\s*[^\\s]*\\s*!important(\\s*;)?', 'gmi');
+            return rule.test(this.cssText) ? 'important' : '';
+        }
+    }
+  }
+
+  // Escape regex chars with \
+  window.__wlw.escape = function(text) {
+      return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+  }
+
+  window.__wlw.addStyleToJquery = function(jQuery) {
+    // The style function
+    jQuery.fn.style = function(styleName, value, priority) {
+        // DOM node
+        var node = this.get(0);
+        // Ensure we have a DOM node 
+        if (typeof node == 'undefined') {
+            return;
+        }
+        // CSSStyleDeclaration
+        var style = this.get(0).style;
+        // Getter/Setter
+        if (typeof styleName != 'undefined') {
+            if (typeof value != 'undefined') {
+                // Set style property
+                var priority = typeof priority != 'undefined' ? priority : '';
+                style.setProperty(styleName, value, priority);
+            } else {
+                // Get style property
+                return style.getPropertyValue(styleName);
+            }
+        } else {
+            // Get CSSStyleDeclaration
+            return style;
+        }
+    }
+    return jQuery;
+  }
+
+  window.__wlw.addWhitenToJquery = function(jQuery) {
+    jQuery.fn.whiten = function() {
+      var css_changes = {
+        '-webkit-transition':'all 1s ease-out',
+        '-moz-transition':'all 1s ease-out',
+        '-o-transition':'all 1s ease-out',
+        'transition':'all 1s ease-out'
+      };
+      var style_changes = {
+        'color':'#FFF',
+        'background-color':'#FFF',
+        'border-color':'#FFF'
+      };
+      this.css(css_changes);
+      for (var style_change in style_changes) {
+        if (style_changes.hasOwnProperty(style_change)) {
+          this.style(style_change, style_changes[style_change], 'important');
+        }
+      }
+      return this;
+    }
+    return jQuery;
+  }
+
   window.__wlw.hideWords = function(jQuery) {
-    var css_changes = {
-      '-webkit-transition':'all 1s ease-out',
-      '-moz-transition':'all 1s ease-out',
-      '-o-transition':'all 1s ease-out',
-      'transition':'all 1s ease-out',
-      'color':'#FFF',
-      'background-color':'#FFF',
-      'border-color':'#FFF'
-    };
-    jQuery('body').css(css_changes).find('*').each( function() {
-      jQuery(this).css(css_changes);
+    jQuery('body').whiten().find('*').each( function() {
+      jQuery(this).whiten();
     });
   }
   window.__wlw.loader();
