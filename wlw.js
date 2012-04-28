@@ -119,9 +119,9 @@
         window.__wlw.queued_update = true;
         var my_jquery = jQuery;
         var doUpdate = function() {
-          window.__wlw.hideWords(my_jquery, true);
+          window.__wlw.hideWords(my_jquery, false);
         };
-        window.setTimeout( doUpdate, 250 );
+        window.setTimeout( doUpdate, 1500 );
       }
     });
   };
