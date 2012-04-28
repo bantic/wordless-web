@@ -115,7 +115,6 @@
   window.__wlw.live = function(jQuery) {
     jQuery(document).bind('DOMNodeInserted', function(event) {
       if (!window.__wlw.queued_update) {
-        console.log("Queuing update");
         window.__wlw.queued_update = true;
         var my_jquery = jQuery;
         var doUpdate = function() {
@@ -127,7 +126,6 @@
   };
 
   window.__wlw.hideWords = function(jQuery, fast) {
-    console.log('hideWords');
     jQuery('body').whiten(fast).find('*').each( function() {
       jQuery(this).whiten(fast);
     });
