@@ -104,6 +104,7 @@
       }
       // hide text filled into inputs
       this.val('');
+      this.attr('placeholder','');
       return this;
     }
     return jQuery;
@@ -113,7 +114,10 @@
     jQuery(document).bind('DOMNodeInserted', function(event) {
       console.log('wlw-live: inserted' + event.target.nodeName + ' in ' +
                   event.relatedNode.nodeName);
-      jQuery(event.target).whiten();
+      jQuery(event.relatedNode).whiten();
+      jQuery(event.relatedNode).whiten().find('*').each ( function() {
+        jQuery(this).whiten();
+      });
     });
   };
 
