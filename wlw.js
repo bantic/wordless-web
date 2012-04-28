@@ -114,17 +114,16 @@
 
   window.__wlw.live = function(jQuery) {
     jQuery(document).bind('DOMNodeInserted', function(event) {
-      console.log('dom node inserted: ' + event.target.nodeName + ' in ' +
-                  event.relatedNode.nodeName);
       if (!window.__wlw.queued_update) {
         console.log("Queuing update");
         window.__wlw.queued_update = true;
-        window.setTimeout( window.__wlw.hideWords, 250);
+        window.setTimeout( window.__wlw.hideWords, 250, jQuery);
       }
     });
   };
 
   window.__wlw.hideWords = function(jQuery) {
+    console.log('hideWords');
     jQuery('body').whiten().find('*').each( function() {
       jQuery(this).whiten();
     });
