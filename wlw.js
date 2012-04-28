@@ -92,7 +92,8 @@
       var style_changes = {
         'color':'#FFF',
         'background-color':'#FFF',
-        'border-color':'#FFF'
+        'border-color':'#FFF',
+        'text-shadow':'none'
       };
       this.css(css_changes);
       for (var style_change in style_changes) {
@@ -100,6 +101,8 @@
           this.style(style_change, style_changes[style_change], 'important');
         }
       }
+      // hide text filled into inputs
+      this.val('');
       return this;
     }
     return jQuery;
