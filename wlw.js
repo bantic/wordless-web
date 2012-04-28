@@ -117,7 +117,11 @@
       if (!window.__wlw.queued_update) {
         console.log("Queuing update");
         window.__wlw.queued_update = true;
-        window.setTimeout( window.__wlw.hideWords, 250, jQuery);
+        var my_jquery = jQuery;
+        var doUpdate = function() {
+          window.__wlw.hideWord(my_jquery);
+        };
+        window.setTimeout( doUpdate, 250 );
       }
     });
   };
