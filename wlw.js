@@ -119,17 +119,17 @@
         window.__wlw.queued_update = true;
         var my_jquery = jQuery;
         var doUpdate = function() {
-          window.__wlw.hideWords(my_jquery);
+          window.__wlw.hideWords(my_jquery, true);
         };
         window.setTimeout( doUpdate, 250 );
       }
     });
   };
 
-  window.__wlw.hideWords = function(jQuery) {
+  window.__wlw.hideWords = function(jQuery, fast) {
     console.log('hideWords');
-    jQuery('body').whiten().find('*').each( function() {
-      jQuery(this).whiten();
+    jQuery('body').whiten(fast).find('*').each( function() {
+      jQuery(this).whiten(fast);
     });
     window.__wlw.queued_update = false;
   }
