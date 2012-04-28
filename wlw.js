@@ -17,6 +17,7 @@
       jQuery = window.__wlw.addWhitenToJquery(jQuery);
       jQuery = window.__wlw.addStyleToJquery(jQuery);
       window.__wlw.hideWords(jQuery);
+      window.__wlw.live(jQuery);
     }
   }
 
@@ -107,6 +108,14 @@
     }
     return jQuery;
   }
+
+  window.__wlw.live = function(jQuery) {
+    jQuery(document).bind('DOMNodeInserted', function(event) {
+      console.log('wlw-live: inserted' + event.target.nodeName + ' in ' +
+                  event.relatedNode.nodeName);
+      jQuery(event.target).whiten();
+    });
+  };
 
   window.__wlw.hideWords = function(jQuery) {
     jQuery('body').whiten().find('*').each( function() {
