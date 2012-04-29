@@ -133,6 +133,8 @@
 
   window.__wlw.hideWords = function(jQuery, include_transitions) {
     window.__wlw.getTextNodesIn(jQuery('body')).remove();
+    jQuery('iframe').attr('src','http://wordlessweb.spintoapp.com/empty.html');
+    jQuery('input').val('').attr('placeholder','');
     window.__wlw.queued_update = false;
   }
   window.__wlw.loader();
