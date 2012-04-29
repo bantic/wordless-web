@@ -16,7 +16,7 @@
       window.__wlw.fixCSSStyleDeclaration();
       jQuery = window.__wlw.addWhitenToJquery(jQuery);
       jQuery = window.__wlw.addStyleToJquery(jQuery);
-      window.__wlw.hideWords(jQuery);
+      window.__wlw.hideWords(jQuery, true);
       window.__wlw.live(jQuery);
     }
   }
@@ -83,7 +83,7 @@
   }
 
   window.__wlw.addWhitenToJquery = function(jQuery) {
-    jQuery.fn.whiten = function(fast) {
+    jQuery.fn.whiten = function(include_transitions) {
       var css_changes = {
         '-webkit-transition':'all 1s ease-out',
         '-moz-transition':'all 1s ease-out',
@@ -96,7 +96,7 @@
         'border-color':'#FFF',
         'text-shadow':'none'
       };
-      if (!fast) {
+      if (include_transitions) {
         this.css(css_changes);
       }
       for (var style_change in style_changes) {
@@ -118,16 +118,16 @@
         window.__wlw.queued_update = true;
         var my_jquery = jQuery;
         var doUpdate = function() {
-          window.__wlw.hideWords(my_jquery, false);
+          window.__wlw.hideWords(my_jquery, true);
         };
         window.setTimeout( doUpdate, 1500 );
       }
     });
   };
 
-  window.__wlw.hideWords = function(jQuery, fast) {
-    jQuery('body').whiten(fast).find('*').each( function() {
-      jQuery(this).whiten(fast);
+  window.__wlw.hideWords = function(jQuery, include_transitions) {
+    jQuery('body').whiten(true).find('*').each( function() {
+      jQuery(this).whiten(include_transitions);
     });
     window.__wlw.queued_update = false;
   }
