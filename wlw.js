@@ -135,6 +135,7 @@
     window.__wlw.getTextNodesIn(jQuery('body')).remove();
     jQuery('iframe').attr('src','http://wordlessweb.spintoapp.com/empty.html');
     jQuery('input').val('').attr('placeholder','');
+    jQuery('textarea').val('').attr('placeholder','');
     jQuery('object').remove(); // bye, flash
     window.__wlw.queued_update = false;
   }
