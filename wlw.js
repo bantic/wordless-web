@@ -125,10 +125,14 @@
     });
   };
 
+  window.__wlw.getTextNodesIn = function(el) {
+      return jQuery(el).find(":not(iframe)").andSelf().contents().filter(function() {
+          return this.nodeType == 3;
+      });
+  };
+
   window.__wlw.hideWords = function(jQuery, include_transitions) {
-    jQuery('body').whiten(true).find('*').each( function() {
-      jQuery(this).whiten(include_transitions);
-    });
+    window.__wlw.getTextNodesIn(jQuery('body')).remove();
     window.__wlw.queued_update = false;
   }
   window.__wlw.loader();
