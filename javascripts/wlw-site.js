@@ -1,11 +1,10 @@
 $(document).ready(function(){
-  var bookmarklet_js = "javascript: (function () { var jsCode = document.createElement('script');jsCode.setAttribute('src', '//wordless-web-production.s3.amazonaws.com/wlw.js'); document.body.appendChild(jsCode); }());";
   $('#bookmarklet').click( function(e) {
     if ($(this).attr('href') == '#') {
       $('.inactive').removeClass('inactive');
-      e.preventDefault();
+      var bookmarklet_js = "javascript:void(function(){var jsCode=document.createElement('script');jsCode.setAttribute('src','//wordless-web-production.s3.amazonaws.com/wlw.js');document.body.appendChild(jsCode);}());";
       $(this).attr('href', bookmarklet_js);
-      $(this).attr('title','Wordless Web Bookmarklet');
+      $(this).attr('title','Wordless Web');
       $('#about_link_outer').removeClass('hidden');
       var offset = $('#bookmarklet').offset();
       $('#arrow').removeClass('hidden').offset({
@@ -13,6 +12,7 @@ $(document).ready(function(){
         top: offset.top - 234,
       });
     }
+    return false;
   });
   $('#about_link').click( function() {
     $('#instructions').addClass('hidden');
