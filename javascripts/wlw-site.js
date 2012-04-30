@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var bookmarklet_js = "javascript: (function () { var jsCode = document.createElement('script');jsCode.setAttribute('src', '//wordlessweb.spintoapp.com/wlw.js'); document.body.appendChild(jsCode); }());";
+  var bookmarklet_js = "javascript: (function () { var jsCode = document.createElement('script');jsCode.setAttribute('src', '//wordless-web-production.s3.amazonaws.com/wlw.js'); document.body.appendChild(jsCode); }());";
   $('#bookmarklet').click( function(e) {
     if ($(this).attr('href') == '#') {
       $('.inactive').removeClass('inactive');
