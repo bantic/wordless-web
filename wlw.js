@@ -1,4 +1,8 @@
 ;(function() {
+  // This is hosted on S3 at http://wordless-web-production.s3.amazonaws.com/wlw.js
+  // because we don't want to deal with setting up and serving off of SSL
+  // through our domain provider
+  // Edit this file here and upload it there
   window.__wlw = {};
   window.__wlw.loading_jQuery = false;
   window.__wlw.loader = function() {
