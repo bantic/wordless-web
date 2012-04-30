@@ -16,8 +16,14 @@ body {
   display: none;
 }
 #bookmarklet {
+  display: block;
+  width: 127px;
+  height: 49px;
+  background: url(/images/WLW_button.png) no-repeat;
   text-indent: -4000px;
-  color: #FFFFFF;
+}
+#bookmarklet:hover {
+  opacity: 0.5;
 }
 
 #header h1 {
@@ -35,9 +41,7 @@ body {
 }
 #button-wrapper {
   width: 127px;
-  margin: 0 auto;
-  height: 180px;
-  line-height: 225px;
+  margin: 70px auto;
 }
 #button-wrapper.bordered {
   border-top: 1px solid #BCBEC0;
@@ -68,9 +72,6 @@ body {
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-}
-#button-section:hover {
-  opacity: 0.5;
 }
 #button-section.inactive {
   border-top: 1px solid #FFFFFF;
