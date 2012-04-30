@@ -15,12 +15,16 @@ body {
 .hidden {
   display: none;
 }
+#bookmarklet {
+  text-indent: -4000px;
+  color: #FFFFFF;
+}
 
 #header h1 {
   font-size: 44px;
   height: 180px;
   line-height: 180px;
-  color: #939598;
+  color: #A7A9AC;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -35,9 +39,16 @@ body {
   height: 180px;
   line-height: 225px;
 }
+#button-wrapper.bordered {
+  border-top: 1px solid #BCBEC0;
+  border-bottom: 1px solid #BCBEC0;
+}
 #instructions {
   font-size: 18px;
-  color: #939598;
+  color: #BCBEC0;
+  text-align: left;
+  width: 60%;
+  margin: 0 auto;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -52,16 +63,55 @@ body {
 #button-section {
   border-top: 1px solid #BCBEC0;
   border-bottom: 1px solid #BCBEC0;
+  margin-bottom: 50px;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
+#button-section:hover {
+  opacity: 0.5;
+}
 #button-section.inactive {
   border-top: 1px solid #FFFFFF;
   border-bottom: 1px solid #FFFFFF;
 }
+#arrow {
+  position: absolute;
+  right: -40px;
+  top: 10px;
+}
 #about {
-  width: 50%;
+  text-align: left;
+  width: 60%;
   margin: 0 auto;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  font-size: 18px;
+  line-height: 30px;
+  color: #A7A9AC;
+}
+#about strong {
+  color: #A7A9AC;
+}
+#about a, #about a:visited, #about a:hover, #about a:active {
+  color: #A7A9AC;
+}
+a#about_link, a#about_link:visited, a#about_link:hover, a#about_link a:active {
+  color: #BCBEC0;
+  text-decoration: none;
+}
+#about_link_outer {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  position: absolute;
+  width: 100%;
+  bottom: 50px;
+}
+#about_link_inner {
+  text-align: center;
 }

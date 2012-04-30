@@ -9,18 +9,19 @@ layout: default
   </div>
   <div id='button-section' class='inactive'>
     <div id='button-wrapper'>
-      <a id='bookmarklet' href='#' title='Click me'>
+      <a id='bookmarklet' href='#' name='WordlessWeb' title='Click me'>
         <img src='/images/WLW_button.png' />
       </a>
     </div>
   </div>
+  <img id='arrow' class='hidden' src='/images/arrow-w-button.png' />
   <div id='instructions' class='inactive'>
     <ol>
       <li>
        1. Click and drag above button to your browser’s bookmarks bar.
        </li>
        <li>
-       2. Go to any website: Facebook, Youtube, Twitter, Huffington Post...
+       2. Go to any website.
        </li>
        <li>
        3. Click the button.
@@ -30,23 +31,33 @@ layout: default
        </li>
      </ol>
   </div>
+  <div id='about_link_outer' class='hidden'>
+    <div id='about_link_inner'>
+      <a href='#' id='about_link'>About</a>
+    </div>
+  </div>
   <div id='about' class='hidden'>
-    <p><strong>Word Less Web</strong> is an experiment that allows us to look at web sites in a completely different way. A simple browser plug-in serves as a filter that
-    make the text on any site invisible by turning the text and background colors 
-    into white. Only thing you see are the pictures against a blank background.
-    </p>
-    <p>
-    Removing the text also means removing the context for the pictures. Now you can see the pictures purely for what they are without names, labels, 
-    definitions, and purposes. It completely changes the way we perceive images
-    on sites like Facebook, Youtube, Twitter, and Huffington Post. Our interaction with friends, culture, social connections and news instantly becomes more 
-    mysterious and open-ended for each person’s imagination.
-    </p>
-    <p>
-    The whole web also seems a little calmer and quieter when words disappear.
-    </p>
+    <p><strong>Word Less Web</strong> is an experiment that allows us to look at web sites in a completely different way. A simple browser plug-in makes the words on 
+any website invisible by turning both the text and background colors white.
+The only thing left for you to see are the site’s pictures.</p>
+
+<p>No text also means no context. You're free to enjoy the images in their purest 
+form, without names, labels, definitions, or purpose. It makes the pictures 
+we see across the web more mysterious and open to interpretation of our own imaginations.</p>
+
+
+<p>
+Try Wordless Web on your favorite sites and see how it suddenly transforms
+your experience.
+</p>
+<br />
+<p>
+Project by <a href='http://pleaseenjoy.com'>Ji Lee</a>
+<br />
+Coding by <a href='http://twitter.com/bantic'>Cory Forsyth</a>
+</p>
+<br />
+<br />
+<p>Thank you: Rohan Puranik, Jeff Greenspan </p>
   </div>
 </div>
-<!--
-$('body').find('*').each(function(){  $(this).removeAttr('style').css({color:'#fff',background:'#fff',border:'none'}); });
-http://benalman.com/code/test/jquery-run-code-bookmarklet/
--->

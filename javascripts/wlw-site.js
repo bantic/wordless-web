@@ -6,9 +6,18 @@ $(document).ready(function(){
       e.preventDefault();
       $(this).attr('href', bookmarklet_js);
       $(this).attr('title','Wordless Web Bookmarklet');
+      $('#about_link_outer').removeClass('hidden');
+      var offset = $('#bookmarklet').offset();
+      $('#arrow').removeClass('hidden').offset({
+        left: offset.left + 142,
+        top: offset.top - 271,
+      });
     }
   });
-  $('#about').click( function() {
-
+  $('#about_link').click( function() {
+    $('#instructions').addClass('hidden');
+    $('#about').removeClass('hidden');
+    $('#about_link_outer').fadeOut();
+    return false;
   });
 });

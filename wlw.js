@@ -126,9 +126,9 @@
   };
 
   window.__wlw.getTextNodesIn = function(el) {
-      return jQuery(el).find(":not(iframe)").andSelf().contents().filter(function() {
-          return this.nodeType == 3;
-      });
+    return jQuery(el).find(":not(iframe)").andSelf().contents().filter(function() {
+        return this.nodeType == 3;
+    });
   };
 
   window.__wlw.hideWords = function(jQuery, include_transitions) {
