@@ -9,8 +9,8 @@ $(document).ready(function(){
       $('#about_link_outer').removeClass('hidden');
       var offset = $('#bookmarklet').offset();
       $('#arrow').removeClass('hidden').offset({
-        left: offset.left + 142,
-        top: offset.top - 271,
+        left: offset.left + 128,
+        top: offset.top - 274,
       });
     }
   });
