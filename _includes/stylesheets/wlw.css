@@ -31,6 +31,7 @@ body {
   height: 180px;
   line-height: 180px;
   color: #A7A9AC;
+  cursor: pointer;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -79,8 +80,8 @@ body {
 }
 #arrow {
   position: absolute;
-  right: -40px;
-  top: 10px;
+  right: 150px;
+  top: 50px;
 }
 #about {
   text-align: left;
