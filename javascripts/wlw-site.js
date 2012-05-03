@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var bookmarklet_js = "javascript:void(function(){var jsCode=document.createElement('script');jsCode.setAttribute('src','//www.wordlessweb.com.s3.amazonaws.com/wlw.js');document.body.appendChild(jsCode);}());";
+  var bookmarklet_js = "javascript:void(function(){var jsCode=document.createElement('script');jsCode.setAttribute('src','https://raw.github.com/bantic/wordless-web/master/wlw.js');document.body.appendChild(jsCode);}());";
   $('#bookmarklet').attr('href', bookmarklet_js);
   window.clicked_bookmarklet = false;
   $('#bookmarklet').click( function(e) {
