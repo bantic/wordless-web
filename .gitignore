@@ -2,3 +2,4 @@
 .spinto_data
 .sass-cache
 _site
+.DS_Store
