@@ -33,13 +33,13 @@ body {
 #bookmarklet.firefox {
   color: #FFF;
   font-family: "Georgia";
-  font-size: 18px;
+  font-size: 17px;
   text-align: center;
   line-height: 49px;
   text-indent: 0px;
   background: #44C8F5;
   border: 1px solid #00AEEF;
-  border-radius: 3px;
+  border-radius: 6px;
   text-decoration: none;
 }
 #bookmarklet:hover {
