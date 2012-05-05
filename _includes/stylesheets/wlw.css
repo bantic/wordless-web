@@ -114,6 +114,12 @@ body {
 .thanks {
   font-size: smaller;
 }
+.thanks a {
+  text-decoration: none;
+}
+.thanks a:hover {
+  text-decoration: none;
+}
 ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 7px;
