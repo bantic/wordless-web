@@ -22,8 +22,25 @@ body {
   display: block;
   width: 127px;
   height: 49px;
+  margin: 70px auto;
   background: url(/images/WLW_button.png) no-repeat;
   text-indent: -4000px;
+}
+#bookmarklet.bordered {
+  border-top: 1px solid #BCBEC0;
+  border-bottom: 1px solid #BCBEC0;
+}
+#bookmarklet.firefox {
+  color: #FFF;
+  font-family: "Georgia";
+  font-size: 18px;
+  text-align: center;
+  line-height: 49px;
+  text-indent: 0px;
+  background: #44C8F5;
+  border: 1px solid #00AEEF;
+  border-radius: 3px;
+  text-decoration: none;
 }
 #bookmarklet:hover {
   opacity: 0.5;
@@ -41,14 +58,6 @@ body {
 }
 #header.inactive h1 {
   color: #FFFFFF;
-}
-#button-wrapper {
-  width: 127px;
-  margin: 70px auto;
-}
-#button-wrapper.bordered {
-  border-top: 1px solid #BCBEC0;
-  border-bottom: 1px solid #BCBEC0;
 }
 #instructions {
   font-size: 18px;

@@ -1,4 +1,7 @@
 $(document).ready(function(){
+  if ($.browser.mozilla) {
+    $('#bookmarklet').addClass('firefox');
+  }
   var bookmarklet_js = "javascript:void(function(){var jsCode=document.createElement('script');jsCode.setAttribute('src','https://raw.github.com/bantic/wordless-web/master/wlw.js');document.body.appendChild(jsCode);}());";
   $('#bookmarklet').attr('href', bookmarklet_js);
   window.clicked_bookmarklet = false;
