@@ -1,5 +1,5 @@
 ;(function() {
-  // This is hosted on S3 at http://wordless-web-production.s3.amazonaws.com/wlw.js
+  // This is hosted off of github
   // because we don't want to deal with setting up and serving off of SSL
   // through our domain provider
   // Edit this file here and upload it there
