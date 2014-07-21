@@ -2,7 +2,8 @@ $(document).ready(function(){
   if ($.browser.mozilla) {
     $('#bookmarklet').addClass('firefox');
   }
-  var bookmarklet_js = "javascript:void(function(){var jsCode=document.createElement('script');jsCode.setAttribute('src','https://raw.github.com/bantic/wordless-web/master/wlw.js');document.body.appendChild(jsCode);}());";
+  var wlw_js_src = 'https://bantic.github.io/wordless-web/wlw.js';
+  var bookmarklet_js = "javascript:void(function(){var jsCode=document.createElement('script');jsCode.setAttribute('src','"+wlw_js_src+"');document.body.appendChild(jsCode);}());";
   $('#bookmarklet').attr('href', bookmarklet_js);
   window.clicked_bookmarklet = false;
   $('#bookmarklet').click( function(e) {
