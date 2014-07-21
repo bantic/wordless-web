@@ -23,7 +23,7 @@ body {
   width: 127px;
   height: 49px;
   margin: 70px auto;
-  background: url(/images/WLW_button.png) no-repeat;
+  background: url(../images/WLW_button.png) no-repeat;
   text-indent: -4000px;
 }
 #bookmarklet.bordered {
