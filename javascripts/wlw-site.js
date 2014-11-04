@@ -1,8 +1,9 @@
 $(document).ready(function(){
+  "use strict";
   if ($.browser.mozilla) {
     $('#bookmarklet').addClass('firefox');
   }
-  var wlw_js_src = 'https://bantic.github.io/wordless-web/wlw.js';
+  var wlw_js_src = 'https://www.wordlessweb.com/javascripts/wlw.js';
   var bookmarklet_js = "javascript:void(function(){var jsCode=document.createElement('script');jsCode.setAttribute('src','"+wlw_js_src+"');document.body.appendChild(jsCode);}());";
   $('#bookmarklet').attr('href', bookmarklet_js);
   window.clicked_bookmarklet = false;
