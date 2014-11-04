@@ -1,7 +1,5 @@
 ;(function() {
-  // This is hosted off of github
-  // because we don't want to deal with setting up and serving off of SSL
-  // through our domain provider
+  "use strict";
   window.__wlw = {};
   window.__wlw.loading_jQuery = false;
   window.__wlw.loader = function() {
@@ -19,10 +17,10 @@
       window.__wlw.hideWords(jQuery, true);
       window.__wlw.live(jQuery);
     }
-  }
+  };
 
   window.__wlw.live = function(jQuery) {
-    jQuery(document).bind('DOMNodeInserted', function(event) {
+    jQuery(document).bind('DOMNodeInserted', function() {
       if (!window.__wlw.queued_update) {
         window.__wlw.queued_update = true;
         var my_jquery = jQuery;
@@ -36,18 +34,18 @@
 
   window.__wlw.getTextNodesIn = function(jQuery, el) {
     return jQuery(el).find(":not(iframe)").andSelf().contents().filter(function() {
-        return this.nodeType == 3;
+        return this.nodeType === 3;
     });
   };
 
-  window.__wlw.hideWords = function(jQuery, include_transitions) {
+  window.__wlw.hideWords = function(jQuery) {
     window.__wlw.getTextNodesIn(jQuery, jQuery('body')).remove();
     jQuery('iframe').css('opacity',0);
     jQuery('input').val('').attr('placeholder','');
     jQuery('textarea').val('').attr('placeholder','');
     jQuery('object').remove(); // bye, flash
     window.__wlw.queued_update = false;
-  }
+  };
   window.__wlw.loader();
 })();
 
